@@ -7,7 +7,7 @@
 set -e
 
 REPOPATH="/Users/sara/codebase/playground/grpc/tscproto"
-CURRENT_BRANCH="master"
+CURRENT_BRANCH="cid"
 
 # Helper for adding a directory to the stack and echoing the result
 function enterDir {
@@ -57,6 +57,7 @@ function buildProtoForTypes {
       # Copy the generated files out of the pb-* path into the repository
       # that we care about
       cp -R pb-$lang/* $REPOPATH/$reponame/
+      cp *.proto $REPOPATH/$reponame/
 
       commitAndPush $REPOPATH/$reponame
 
