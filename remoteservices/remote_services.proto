@@ -16,7 +16,6 @@ message Request {
     string channel = 2;
     string authorization = 3;
     string vin = 4;
-    string dummy = 5;
 }
 
 message Response {
