@@ -10,6 +10,7 @@ service RemoteServices {
     rpc GetStatusStream(Request) returns (stream Response) {}
 }
 
+// Common Request for all remote services
 message Request {
     string brand = 1;
     string channel = 2;

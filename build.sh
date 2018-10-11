@@ -6,7 +6,7 @@
 
 set -e
 
-REPOPATH="./dist/remoteservices"
+REPOPATH="/Users/sara/codebase/playground/grpc/tscproto"
 CURRENT_BRANCH="master"
 
 # Helper for adding a directory to the stack and echoing the result
@@ -59,6 +59,10 @@ function buildProtoForTypes {
       cp -R pb-$lang/* $REPOPATH/$reponame/
 
       commitAndPush $REPOPATH/$reponame
+
+      # Clean up after
+      rm -rf pb-$lang
+      rm -rf $REPOPATH/$reponame
     done < .protolangs
   fi
 }
